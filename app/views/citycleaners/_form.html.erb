@@ -1,0 +1,31 @@
+<%= form_for(citycleaner) do |f| %>
+  <% if citycleaner.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(citycleaner.errors.count, "error") %> prohibited this citycleaner from being saved:</h2>
+
+      <ul>
+      <% citycleaner.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<% if params[:cleaner_id] %>
+  <div class="field">
+     <%=f.hidden_field :cleaner_id, :value => params[:cleaner_id] %>
+  </div>
+<% else %>
+  <div class="field">
+    <%= f.label :cleaner_id %>
+    <%= f.collection_select(:cleaner_id, @cleaners, :id, :name) %>
+  </div>
+<% end %>
+<div class="field">
+    <%= f.label :city_id %>
+    <%= f.collection_select(:city_id, @cities, :id, :name) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

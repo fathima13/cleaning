@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @cleaner.name %>
+</p>
+<%= link_to 'Addcitycleaner', new_citycleaner_path(cleaner_id: @cleaner.id) %>
+<%= link_to 'Edit', edit_cleaner_path(@cleaner) %> |
+<%= link_to 'Back', cleaners_path %>

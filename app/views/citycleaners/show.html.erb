@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cleaner:</strong>
+  <%= @citycleaner.cleaner_id %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @citycleaner.city_id %>
+</p>
+
+<%= link_to 'Edit', edit_citycleaner_path(@citycleaner) %> |
+<%= link_to 'Back', citycleaners_path %>
